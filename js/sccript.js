@@ -8,6 +8,9 @@ class Empleado{
         this.fechaIngreso = fechaIngreso;
         this.salario = salario;
     }
+    actualizarSalario(){
+        this.salario = nuevoSalario;
+    }
     calcularEdad(){
         const fechaNacimiento = new Date(this.fechaNacimiento);
         const ahora = new Date();
@@ -27,9 +30,30 @@ class Empleado{
     }
 }
 
-let m = new Empleado();
+// let m = new Empleado();
 
-function modificar_salario(){
-    let cant = prompt("Nuevo salario");
-    m.salario(parseInt(cant));
+// document.addEventListener('DOMContentLoaded', function (){
+//     const modificarBtn = document.getElementById('modificar_salario');
+
+//     modificarBtn.addEventListener('click', function (){
+//         const nuevoSalario = document.getElementById('salario').value;
+//         // Logica para actualizar el salario con el nuevo valor ingresado por el usuario
+//         console.log('Nuevo salario:', nuevoSalario);
+//     })
+// })
+
+const btnModificarSalario = document.getElementById("modificar_salario");
+const btnCalcularEdad = document.getElementById("calcular_edad");
+const btnCalcularAntiguedad = document.getElementById("calcular_antiguedad");
+const btnCalcularPrestaciones = document.getElementById("calcular_prestaciones");
+
+btnModificarSalario.addEventListener("click", modificarSalario);
+btnCalcularEdad.addEventListener("click", CalcularEdad);
+btnCalcularAntiguedad.addEventListener("click", btnCalcularAntiguedad);
+btnCalcularPrestaciones.addEventListener("click", calcularPrestaciones);
+
+function modificarSalario(){
+    const salarioInput = document.getElementById("salario");
+    const nuevoSalario = salarioInput.value;
+    console.log("Nuevo salario:", nuevoSalario)
 }
